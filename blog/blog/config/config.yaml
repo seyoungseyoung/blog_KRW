@@ -1,0 +1,47 @@
+data_collection:
+  yfinance:
+    history_days: 3
+    indices:
+      - ^GSPC  # S&P 500
+      - ^DJI   # Dow Jones
+      - ^IXIC  # NASDAQ
+      - ^RUT   # Russell 2000
+  
+  market_data:
+    categories:
+      - gainers
+      - losers
+      - most_active
+      - top_etfs
+
+blog_settings:
+  platform: naver
+  category_id: default
+  tags_limit: 10
+  auto_publish: true
+
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/exchange_rate_bot.log"
+
+settings:
+  auto_confirm: true
+  auto_post: true
+  auto_login: true
+
+blog:
+  url: "https://blog.naver.com/gongnyangi"
+  category: "오늘의 이슈"
+  post_time:
+    morning: "08:30"
+    evening: "17:30"
+
+# Yahoo Finance 설정
+yahoo_finance:
+  usd_krw_ticker: "KRW=X"  # USD/KRW 환율 티커
+  lookback_days: 7         # 과거 데이터 조회 기간 (일)
+
+# 네이버 금융 설정
+naver_finance:
+  exchange_rate_url: "https://finance.naver.com/marketindex/exchangeDetail.naver?marketindexCd=FX_USDKRW"

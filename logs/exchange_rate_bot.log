@@ -1,0 +1,621 @@
+2025-04-10 15:04:25,557 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:04:25,558 - data_collector - INFO - Yahoo Finance에서 환율 데이터 수집 시작: KRW=X
+2025-04-10 15:04:26,242 - data_collector - INFO - 수집된 환율 데이터: 1457.91원 (변동: -28.22원, -1.90%)
+2025-04-10 15:04:26,346 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 0개
+2025-04-10 15:04:26,348 - utils - ERROR - 프로그램 실행 중 오류 발생: 'ExchangeRateAnalyzer' object has no attribute 'analyze_exchange_rate'
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_KRW\blog\blog\src\main.py", line 68, in main
+    analysis = analyzer.analyze_exchange_rate(exchange_data, [], exchange_news)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ExchangeRateAnalyzer' object has no attribute 'analyze_exchange_rate'
+2025-04-10 15:05:20,978 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:05:20,978 - data_collector - INFO - Yahoo Finance에서 환율 데이터 수집 시작: KRW=X
+2025-04-10 15:05:21,634 - data_collector - INFO - 수집된 환율 데이터: 1457.24원 (변동: -28.89원, -1.94%)
+2025-04-10 15:05:21,730 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 0개
+2025-04-10 15:05:21,732 - market_analyzer - ERROR - Error preparing analysis data: 'Series' object has no attribute 'columns'
+2025-04-10 15:05:21,732 - market_analyzer - ERROR - 시장 분석 중 오류 발생: cannot access local variable 'significant_moves' where it is not associated with a value
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_KRW\blog\blog\src\market_analyzer.py", line 87, in _prepare_analysis_data
+    if 'Date' in df.columns:
+                 ^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\pandas\core\generic.py", line 6299, in __getattr__
+    return object.__getattribute__(self, name)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AttributeError: 'Series' object has no attribute 'columns'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_KRW\blog\blog\src\market_analyzer.py", line 43, in analyze_market_trend
+    prepared_data = self._prepare_analysis_data(market_data, news)
+  File "c:\Users\aaa\code\blog_KRW\blog\blog\src\market_analyzer.py", line 136, in _prepare_analysis_data
+    if 'biggest_gainer' in significant_moves or 'biggest_loser' in significant_moves:
+                           ^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'significant_moves' where it is not associated with a value
+2025-04-10 15:05:25,622 - blog_poster - ERROR - Login failed: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=135.0.7049.84)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72FD41F55+78133]
+	GetHandleVerifier [0x00007FF72FD41FB0+78224]
+	(No symbol) [0x00007FF72FB091BA]
+	(No symbol) [0x00007FF72FAF4F25]
+	(No symbol) [0x00007FF72FB19EE4]
+	(No symbol) [0x00007FF72FB8EC8F]
+	(No symbol) [0x00007FF72FBAEB12]
+	(No symbol) [0x00007FF72FB86F33]
+	(No symbol) [0x00007FF72FB50358]
+	(No symbol) [0x00007FF72FB510C3]
+	GetHandleVerifier [0x00007FF73000BA8D+3001453]
+	GetHandleVerifier [0x00007FF730005E72+2977874]
+	GetHandleVerifier [0x00007FF73002497D+3103581]
+	GetHandleVerifier [0x00007FF72FD5C7EA+186826]
+	GetHandleVerifier [0x00007FF72FD643FF+218591]
+	GetHandleVerifier [0x00007FF72FD49D94+110452]
+	GetHandleVerifier [0x00007FF72FD49F42+110882]
+	GetHandleVerifier [0x00007FF72FD30379+5465]
+	BaseThreadInitThunk [0x00007FFA88277374+20]
+	RtlUserThreadStart [0x00007FFA89F9CC91+33]
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_KRW\blog\blog\src\blog_poster.py", line 74, in login
+    self.driver.execute_script(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"document.getElementsByName('id')[0].value='{self.username}'")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 407, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=135.0.7049.84)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72FD41F55+78133]
+	GetHandleVerifier [0x00007FF72FD41FB0+78224]
+	(No symbol) [0x00007FF72FB091BA]
+	(No symbol) [0x00007FF72FAF4F25]
+	(No symbol) [0x00007FF72FB19EE4]
+	(No symbol) [0x00007FF72FB8EC8F]
+	(No symbol) [0x00007FF72FBAEB12]
+	(No symbol) [0x00007FF72FB86F33]
+	(No symbol) [0x00007FF72FB50358]
+	(No symbol) [0x00007FF72FB510C3]
+	GetHandleVerifier [0x00007FF73000BA8D+3001453]
+	GetHandleVerifier [0x00007FF730005E72+2977874]
+	GetHandleVerifier [0x00007FF73002497D+3103581]
+	GetHandleVerifier [0x00007FF72FD5C7EA+186826]
+	GetHandleVerifier [0x00007FF72FD643FF+218591]
+	GetHandleVerifier [0x00007FF72FD49D94+110452]
+	GetHandleVerifier [0x00007FF72FD49F42+110882]
+	GetHandleVerifier [0x00007FF72FD30379+5465]
+	BaseThreadInitThunk [0x00007FFA88277374+20]
+	RtlUserThreadStart [0x00007FFA89F9CC91+33]
+
+2025-04-10 15:05:25,632 - utils - ERROR - 네이버 로그인 실패
+2025-04-10 15:06:17,153 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:06:17,153 - data_collector - INFO - Yahoo Finance에서 환율 데이터 수집 시작: KRW=X
+2025-04-10 15:06:17,797 - data_collector - INFO - 수집된 환율 데이터: 1457.98원 (변동: -28.15원, -1.89%)
+2025-04-10 15:06:17,884 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 0개
+2025-04-10 15:06:17,886 - market_analyzer - INFO - Current exchange rate: 1457.98원 (Change: -1.89%)
+2025-04-10 15:06:17,887 - market_analyzer - ERROR - 시장 분석 중 오류 발생: 'naver_news'
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_KRW\blog\blog\src\market_analyzer.py", line 49, in analyze_market_trend
+    market_commentary = self._get_deepseek_analysis(self._create_market_commentary_prompt(prepared_data))
+                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "c:\Users\aaa\code\blog_KRW\blog\blog\src\market_analyzer.py", line 150, in _create_market_commentary_prompt
+    if data['naver_news']:
+       ~~~~^^^^^^^^^^^^^^
+KeyError: 'naver_news'
+2025-04-10 15:06:24,030 - utils - ERROR - 블로그 포스팅 중 오류: 'analysis'
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_KRW\blog\blog\src\main.py", line 91, in main
+    content = analysis['analysis']
+              ~~~~~~~~^^^^^^^^^^^^
+KeyError: 'analysis'
+2025-04-10 15:07:10,348 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:07:10,348 - data_collector - INFO - Yahoo Finance에서 환율 데이터 수집 시작: KRW=X
+2025-04-10 15:07:11,046 - data_collector - INFO - 수집된 환율 데이터: 1458.08원 (변동: -28.05원, -1.89%)
+2025-04-10 15:07:11,137 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 0개
+2025-04-10 15:07:11,139 - market_analyzer - INFO - Current exchange rate: 1458.08원 (Change: -1.89%)
+2025-04-10 15:12:30,681 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:12:30,790 - data_collector - ERROR - 환율 데이터 수집 중 오류: 'NoneType' object has no attribute 'text'
+2025-04-10 15:12:30,865 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 0개
+2025-04-10 15:13:07,357 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:13:07,459 - data_collector - ERROR - 환율 데이터 요소를 찾을 수 없습니다.
+2025-04-10 15:13:07,540 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 0개
+2025-04-10 15:13:40,759 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:13:40,866 - data_collector - ERROR - 환율 데이터 요소를 찾을 수 없습니다.
+2025-04-10 15:13:40,965 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 0개
+2025-04-10 15:14:25,661 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:14:25,774 - data_collector - ERROR - 환율 데이터 요소를 찾을 수 없습니다.
+2025-04-10 15:14:25,850 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 0개
+2025-04-10 15:16:15,238 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:16:15,342 - data_collector - ERROR - 환율 데이터 요소를 찾을 수 없습니다.
+2025-04-10 15:16:15,417 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:17:17,164 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:17:17,268 - data_collector - ERROR - 환율 데이터 요소를 찾을 수 없습니다.
+2025-04-10 15:17:17,344 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:17:56,115 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:17:56,206 - data_collector - ERROR - 환율 데이터 요소를 찾을 수 없습니다.
+2025-04-10 15:17:56,286 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:18:37,112 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:18:37,200 - data_collector - ERROR - 환율 데이터 테이블을 찾을 수 없습니다.
+2025-04-10 15:18:37,287 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:20:39,889 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:20:39,973 - data_collector - ERROR - 환율 데이터를 찾을 수 없습니다.
+2025-04-10 15:20:40,058 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:20:54,157 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:20:54,225 - data_collector - ERROR - 환율 데이터를 찾을 수 없습니다.
+2025-04-10 15:20:54,308 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:21:24,965 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:21:25,065 - data_collector - ERROR - 환율 데이터를 찾을 수 없습니다.
+2025-04-10 15:21:25,148 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:21:56,172 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:21:56,345 - data_collector - ERROR - 환율 데이터를 찾을 수 없습니다.
+2025-04-10 15:21:56,452 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:35:40,836 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:35:41,617 - data_collector - INFO - 수집된 환율 데이터: 1456.76원 (변동: +0.00원, +0.00%)
+2025-04-10 15:35:41,699 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:35:41,700 - market_analyzer - ERROR - Invalid market data format
+2025-04-10 15:35:50,614 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(10054, '현재 연결은 원격 호스트에 의해 강제로 끊겼습니다', None, 10054, None)': /session/68c6f00124c24f9b6334066f5768a7d1/url
+2025-04-10 15:35:54,694 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E009D79F90>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/68c6f00124c24f9b6334066f5768a7d1/url
+2025-04-10 15:35:58,783 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E009D7B610>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/68c6f00124c24f9b6334066f5768a7d1/url
+2025-04-10 15:36:02,824 - blog_poster - ERROR - Login failed: HTTPConnectionPool(host='localhost', port=13323): Max retries exceeded with url: /session/68c6f00124c24f9b6334066f5768a7d1/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E009D7D350>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다'))
+Traceback (most recent call last):
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\connection.py", line 445, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\http\client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+        self, f"Failed to establish a new connection: {e}"
+    ) from e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001E009D7D350>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aaa\code\blog_KRW\blog\blog\src\blog_poster.py", line 90, in login
+    WebDriverWait(self.driver, 5).until(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda d: 'nid.naver.com/nidlogin.login' not in d.current_url
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\support\wait.py", line 92, in until
+    value = method(self._driver)
+  File "C:\Users\aaa\code\blog_KRW\blog\blog\src\blog_poster.py", line 91, in <lambda>
+    lambda d: 'nid.naver.com/nidlogin.login' not in d.current_url
+                                                    ^^^^^^^^^^^^^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 437, in current_url
+    return self.execute(Command.GET_CURRENT_URL)["value"]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 345, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 300, in execute
+    return self._request(command_info[0], url, body=data)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 321, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\_request_methods.py", line 135, in request
+    return self.request_encode_url(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<3 lines>...
+        **urlopen_kw,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\_request_methods.py", line 182, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<13 lines>...
+        **response_kw,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\aaa\anaconda3\envs\blog\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=13323): Max retries exceeded with url: /session/68c6f00124c24f9b6334066f5768a7d1/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E009D7D350>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다'))
+2025-04-10 15:36:02,852 - utils - ERROR - 네이버 로그인 실패
+2025-04-10 15:36:06,886 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E009D7E3F0>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/68c6f00124c24f9b6334066f5768a7d1
+2025-04-10 15:36:10,976 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E009E9A570>: Failed to establish a new connection: [WinError 10061] 대상 컴퓨터에서 연결을 거부했으므로 연결하지 못했습니다')': /session/68c6f00124c24f9b6334066f5768a7d1
+2025-04-10 15:36:22,178 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:36:22,788 - data_collector - INFO - 수집된 환율 데이터: 1456.49원 (변동: +0.00원, +0.00%)
+2025-04-10 15:36:22,874 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:36:22,875 - market_analyzer - ERROR - Invalid market data format
+2025-04-10 15:36:27,415 - blog_poster - ERROR - Login failed: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.84)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72FD41F55+78133]
+	GetHandleVerifier [0x00007FF72FD41FB0+78224]
+	(No symbol) [0x00007FF72FB091BA]
+	(No symbol) [0x00007FF72FAE1B73]
+	(No symbol) [0x00007FF72FB8EAEE]
+	(No symbol) [0x00007FF72FBAEB12]
+	(No symbol) [0x00007FF72FB86F33]
+	(No symbol) [0x00007FF72FB50358]
+	(No symbol) [0x00007FF72FB510C3]
+	GetHandleVerifier [0x00007FF73000BA8D+3001453]
+	GetHandleVerifier [0x00007FF730005E72+2977874]
+	GetHandleVerifier [0x00007FF73002497D+3103581]
+	GetHandleVerifier [0x00007FF72FD5C7EA+186826]
+	GetHandleVerifier [0x00007FF72FD643FF+218591]
+	GetHandleVerifier [0x00007FF72FD49D94+110452]
+	GetHandleVerifier [0x00007FF72FD49F42+110882]
+	GetHandleVerifier [0x00007FF72FD30379+5465]
+	BaseThreadInitThunk [0x00007FFA88277374+20]
+	RtlUserThreadStart [0x00007FFA89F9CC91+33]
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_KRW\blog\blog\src\blog_poster.py", line 78, in login
+    self.driver.execute_script(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        f"document.getElementsByName('pw')[0].value='{self.password}'")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 407, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=135.0.7049.84)
+Stacktrace:
+	GetHandleVerifier [0x00007FF72FD41F55+78133]
+	GetHandleVerifier [0x00007FF72FD41FB0+78224]
+	(No symbol) [0x00007FF72FB091BA]
+	(No symbol) [0x00007FF72FAE1B73]
+	(No symbol) [0x00007FF72FB8EAEE]
+	(No symbol) [0x00007FF72FBAEB12]
+	(No symbol) [0x00007FF72FB86F33]
+	(No symbol) [0x00007FF72FB50358]
+	(No symbol) [0x00007FF72FB510C3]
+	GetHandleVerifier [0x00007FF73000BA8D+3001453]
+	GetHandleVerifier [0x00007FF730005E72+2977874]
+	GetHandleVerifier [0x00007FF73002497D+3103581]
+	GetHandleVerifier [0x00007FF72FD5C7EA+186826]
+	GetHandleVerifier [0x00007FF72FD643FF+218591]
+	GetHandleVerifier [0x00007FF72FD49D94+110452]
+	GetHandleVerifier [0x00007FF72FD49F42+110882]
+	GetHandleVerifier [0x00007FF72FD30379+5465]
+	BaseThreadInitThunk [0x00007FFA88277374+20]
+	RtlUserThreadStart [0x00007FFA89F9CC91+33]
+
+2025-04-10 15:36:27,423 - utils - ERROR - 네이버 로그인 실패
+2025-04-10 15:38:27,243 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:38:27,909 - data_collector - INFO - 수집된 환율 데이터: 0.00원 (변동: +0.00원, +2.05%)
+2025-04-10 15:38:28,003 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:39:32,789 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:39:33,556 - data_collector - INFO - 수집된 환율 데이터: 1457.30원 (변동: -28.83원, -1.94%)
+2025-04-10 15:39:33,647 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:41:24,997 - utils - ERROR - 블로그 포스팅 중 오류: 'commentary'
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_KRW\blog\blog\src\main.py", line 91, in main
+    content = analysis['commentary']
+              ~~~~~~~~^^^^^^^^^^^^^^
+KeyError: 'commentary'
+2025-04-10 15:43:05,141 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:43:05,745 - data_collector - INFO - 수집된 환율 데이터: 1458.71원 (변동: -27.42원, -1.85%)
+2025-04-10 15:43:05,833 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:45:50,285 - utils - ERROR - 블로그 포스팅 실패
+2025-04-10 15:47:50,711 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:47:51,348 - data_collector - INFO - 수집된 환율 데이터: 1459.29원 (변동: -26.84원, -1.81%)
+2025-04-10 15:47:51,431 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:50:24,311 - utils - ERROR - 블로그 포스팅 실패
+2025-04-10 15:52:27,268 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:52:28,133 - data_collector - INFO - 수집된 환율 데이터: 1458.92원 (변동: -27.21원, -1.83%)
+2025-04-10 15:52:28,236 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 15:55:40,191 - utils - INFO - 블로그 포스팅 성공: 1. [출퇴근 환율분석] 4/10 원달러 1.83%↓…美 관세 유예에 1,456원 마감  
+2. [출퇴근 환율분석] 4/10 환율 27.7원 급락…1440원대 진입 후 반등  
+3. [출퇴근 환율분석] 4/10 원화 강세 지속…유동성↑·관세 유예 영향  
+4. [출�근 환율분석] 4/10 원달러 1,456원, 장중 1440원대 찍고 반등  
+
+- 선택 이유:  
+  - 핵심 동향(1.83% 급락, 1440원대 진입)과 주요 요인(미 관세 유예)을 명시적으로 포함해 정보 전달력을 높였습니다.  
+  - 환율 종가(1,456원) 또는 변동폭(27.7원) 등 구체적 수치를 강조해 신뢰성을 부여했습니다.  
+  - 30자 내외의 간결한 문장 구조로 직관성을 유지했습니다.
+2025-04-10 15:57:48,564 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 15:57:49,606 - data_collector - INFO - 수집된 환율 데이터: 1458.23원 (변동: -27.90원, -1.88%)
+2025-04-10 15:57:49,700 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 16:00:28,295 - utils - ERROR - 블로그 포스팅 실패
+2025-04-10 16:00:57,083 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 16:00:57,991 - data_collector - INFO - 수집된 환율 데이터: 1457.89원 (변동: -28.24원, -1.90%)
+2025-04-10 16:00:58,084 - data_collector - INFO - 네이버 금융에서 수집된 뉴스: 3개
+2025-04-10 16:03:29,598 - utils - ERROR - 블로그 포스팅 실패
+2025-04-10 16:05:58,319 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 16:05:58,319 - utils - ERROR - 프로그램 실행 중 오류 발생: GoogleNews.__init__() got an unexpected keyword argument 'country'
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_KRW\blog\blog\src\main.py", line 49, in main
+    collector = ExchangeRateCollector(config)
+  File "c:\Users\aaa\code\blog_KRW\blog\blog\src\data_collector.py", line 19, in __init__
+    self.gn = GoogleNews(lang='en', country='US')
+              ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: GoogleNews.__init__() got an unexpected keyword argument 'country'
+2025-04-10 16:06:24,943 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 16:06:25,572 - data_collector - INFO - 수집된 환율 데이터: 1458.35원 (변동: -27.78원, -1.87%)
+2025-04-10 16:06:26,912 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-10 16:06:26,912 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-10 16:09:33,844 - utils - INFO - 블로그 포스팅 성공: [출퇴근 환율분석] 4/10 원달러 1,456원, 美 관세 유예로 38원 급락
+2025-04-10 16:13:25,019 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 16:13:25,652 - data_collector - INFO - 수집된 환율 데이터: 1458.22원 (변동: -27.91원, -1.88%)
+2025-04-10 16:13:27,298 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-10 16:13:27,299 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-10 16:16:04,835 - utils - ERROR - 블로그 포스팅 실패
+2025-04-10 18:00:13,805 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 18:00:14,448 - data_collector - INFO - 수집된 환율 데이터: 1464.57원 (변동: -21.56원, -1.45%)
+2025-04-10 18:00:15,985 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-10 18:00:15,986 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-10 18:03:08,078 - utils - INFO - 블로그 포스팅 성공: [출퇴근 환율분석] 04/10 18:01 KST 원달러 1,464원, 美 관세 유예로 1.45% 급락
+2025-04-10 20:59:30,178 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 20:59:30,866 - data_collector - INFO - 수집된 환율 데이터: 1455.37원 (변동: -30.76원, -2.07%)
+2025-04-10 20:59:32,407 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-10 20:59:32,407 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-10 21:02:53,062 - utils - INFO - 블로그 포스팅 성공: [04/10 21:01 환율분석] 원달러 2.07%↓ 1,455원, 美 관세 유예·외자 순매수 영향
+2025-04-10 23:58:45,010 - utils - INFO - 프로그램 초기화 완료
+2025-04-10 23:58:45,626 - data_collector - INFO - 수집된 환율 데이터: 1449.26원 (변동: -36.87원, -2.48%)
+2025-04-10 23:58:47,197 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-10 23:58:47,198 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-11 00:01:59,664 - utils - INFO - 블로그 포스팅 성공: [04/11 00:00 환율분석] 원달러 1,449원, 2.48% 급락…美 관세 유예 영향
+2025-04-11 02:58:06,314 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 02:58:06,695 - data_collector - INFO - 수집된 환율 데이터: 1451.43원 (변동: -34.70원, -2.33%)
+2025-04-11 02:58:08,389 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-11 02:58:08,390 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-11 03:00:54,377 - utils - INFO - 블로그 포스팅 성공: [04/11 02:59 환율분석] 원달러 2.3%↓ 1,451원…美 관세 유예 영향
+2025-04-11 05:58:00,781 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 05:58:01,078 - data_collector - INFO - 수집된 환율 데이터: 1452.41원 (변동: -33.72원, -2.27%)
+2025-04-11 05:58:02,787 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-11 05:58:02,787 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-11 06:00:53,419 - utils - INFO - 블로그 포스팅 성공: [04/11 05:59 환율분석] 원달러 33.7원↓…美中 관세 완화 영향
+2025-04-11 08:58:59,856 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 08:59:00,154 - data_collector - INFO - 수집된 환율 데이터: 1452.01원 (변동: +0.00원, +0.00%)
+2025-04-11 08:59:01,766 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-11 08:59:01,766 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-11 09:01:42,601 - utils - INFO - 블로그 포스팅 성공: [04/11 09:00 환율분석] 원달러 1,452원 횡보…미·중 아르헨티나 경쟁 주목
+2025-04-11 11:58:50,267 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 11:58:50,604 - data_collector - INFO - 수집된 환율 데이터: 1453.38원 (변동: +9.43원, +0.65%)
+2025-04-11 11:58:52,056 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-11 11:58:52,056 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-11 12:01:45,661 - utils - INFO - 블로그 포스팅 성공: [04/11 12:00 환율분석] 원달러 1,453원 마감, 수출매수로 오후 반등
+2025-04-11 14:58:52,065 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 14:58:52,369 - data_collector - INFO - 수집된 환율 데이터: 1448.58원 (변동: +4.63원, +0.32%)
+2025-04-11 14:58:53,845 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-11 14:58:53,845 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-11 15:01:52,624 - utils - INFO - 블로그 포스팅 성공: [04/11 15:00 환율분석] 원달러 1,448원, 1,450원선 방어 여부 주목
+2025-04-11 17:58:59,086 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 17:58:59,409 - data_collector - INFO - 수집된 환율 데이터: 1430.92원 (변동: -13.03원, -0.90%)
+2025-04-11 17:59:01,222 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-11 17:59:01,222 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-11 18:01:55,847 - utils - INFO - 블로그 포스팅 성공: [04/11 18:00 환율분석] 원달러 1,430.92원, 2년 만에 최저치 기록
+2025-04-11 20:58:02,255 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 20:58:02,657 - data_collector - INFO - 수집된 환율 데이터: 1429.19원 (변동: -14.76원, -1.02%)
+2025-04-11 20:58:04,263 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-11 20:58:04,264 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-11 20:59:04,510 - market_analyzer - ERROR - API 호출 오류 (시도 1): HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+Traceback (most recent call last):
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\urllib3\response.py", line 754, in _error_catcher
+    yield
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\urllib3\response.py", line 1219, in read_chunked
+    self._update_chunk_length()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\urllib3\response.py", line 1138, in _update_chunk_length
+    line = self._fp.fp.readline()  # type: ignore[union-attr]
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\requests\models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\urllib3\response.py", line 1063, in stream
+    yield from self.read_chunked(amt, decode_content=decode_content)
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\urllib3\response.py", line 1202, in read_chunked
+    with self._error_catcher():
+         ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\urllib3\response.py", line 759, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.") from e  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_KRW\blog\blog\src\market_analyzer.py", line 258, in _get_deepseek_analysis
+    response = requests.post(
+        'https://api.deepseek.com/v1/chat/completions',
+    ...<2 lines>...
+        timeout=timeout
+    )
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\requests\sessions.py", line 746, in send
+    r.content
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\requests\models.py", line 902, in content
+    self._content = b"".join(self.iter_content(CONTENT_CHUNK_SIZE)) or b""
+                    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\requests\models.py", line 826, in generate
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+2025-04-11 21:02:06,294 - utils - INFO - 블로그 포스팅 성공: [04/11 21:00 환율분석] 원달러 1,429원, 2년 만에 최저…달러 약세 주도
+2025-04-11 23:58:43,569 - utils - INFO - 프로그램 초기화 완료
+2025-04-11 23:58:44,238 - data_collector - INFO - 수집된 환율 데이터: 1425.28원 (변동: -18.67원, -1.29%)
+2025-04-11 23:58:45,854 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-11 23:58:45,854 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-11 23:59:46,082 - market_analyzer - ERROR - API 호출 오류 (시도 1): HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+Traceback (most recent call last):
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\urllib3\response.py", line 754, in _error_catcher
+    yield
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\urllib3\response.py", line 1219, in read_chunked
+    self._update_chunk_length()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\urllib3\response.py", line 1138, in _update_chunk_length
+    line = self._fp.fp.readline()  # type: ignore[union-attr]
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\socket.py", line 719, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\ssl.py", line 1304, in recv_into
+    return self.read(nbytes, buffer)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\ssl.py", line 1138, in read
+    return self._sslobj.read(len, buffer)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\requests\models.py", line 820, in generate
+    yield from self.raw.stream(chunk_size, decode_content=True)
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\urllib3\response.py", line 1063, in stream
+    yield from self.read_chunked(amt, decode_content=decode_content)
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\urllib3\response.py", line 1202, in read_chunked
+    with self._error_catcher():
+         ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\urllib3\response.py", line 759, in _error_catcher
+    raise ReadTimeoutError(self._pool, None, "Read timed out.") from e  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\aaa\code\blog_KRW\blog\blog\src\market_analyzer.py", line 258, in _get_deepseek_analysis
+    response = requests.post(
+        'https://api.deepseek.com/v1/chat/completions',
+    ...<2 lines>...
+        timeout=timeout
+    )
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\requests\api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\requests\sessions.py", line 746, in send
+    r.content
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\requests\models.py", line 902, in content
+    self._content = b"".join(self.iter_content(CONTENT_CHUNK_SIZE)) or b""
+                    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaa\Anaconda3\envs\blog\Lib\site-packages\requests\models.py", line 826, in generate
+    raise ConnectionError(e)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out.
+2025-04-12 00:02:40,469 - utils - INFO - 블로그 포스팅 성공: [04/12 00:01 환율분석] 원달러 1425원, 2년 만에 최저치 기록
+2025-04-12 02:58:47,204 - utils - INFO - 프로그램 초기화 완료
+2025-04-12 02:58:47,550 - data_collector - INFO - 수집된 환율 데이터: 1443.95원 (변동: +0.00원, +0.00%)
+2025-04-12 02:58:49,210 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-12 02:58:49,210 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-12 03:01:16,281 - utils - INFO - 블로그 포스팅 성공: [04/12 03:00 환율분석] 원달러 1,443.95원, 달러 약세 속 안정세 유지
+2025-04-12 05:58:22,678 - utils - INFO - 프로그램 초기화 완료
+2025-04-12 05:58:23,021 - data_collector - INFO - 수집된 환율 데이터: 1418.62원 (변동: -25.33원, -1.75%)
+2025-04-12 05:58:24,598 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-12 05:58:24,599 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-12 06:00:55,797 - utils - INFO - 블로그 포스팅 성공: [04/12 05:59 환율분석] 원달러 1,418원, 2년 만에 최저…1,410원대 진입 가능성
+2025-04-12 08:58:02,193 - utils - INFO - 프로그램 초기화 완료
+2025-04-12 08:58:02,539 - data_collector - INFO - 수집된 환율 데이터: 1418.62원 (변동: -25.33원, -1.75%)
+2025-04-12 08:58:04,123 - data_collector - ERROR - Google News 수집 중 오류: GoogleNews.set_time_range() missing 1 required positional argument: 'end'
+2025-04-12 08:58:04,124 - data_collector - INFO - 수집된 뉴스: 3개 (네이버 금융: 3개, Yahoo Finance: 0개, Google News: 0개)
+2025-04-12 09:00:44,935 - utils - INFO - 블로그 포스팅 성공: [04/12 08:59 환율분석] 원달러 1,418원, 美 CPI 둔화로 1.75%↓
